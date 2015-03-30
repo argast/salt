@@ -1,3 +1,3 @@
 base:
-	"minion1":
-		- bin.nginx
+    "minion1":
+        - bin.nginx

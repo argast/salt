@@ -1,7 +1,10 @@
 auto_accept: True
 
 fileserver_backend:
-  - git
+    - git
+
+gitfs_provider: gitpython
 
 gitfs_remotes:
-  - git://github.com/argast/salt.git
+    - git://github.com/argast/salt.git:
+        - root: salt
