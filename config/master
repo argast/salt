@@ -1,1 +1,7 @@
 auto_accept: True
+
+fileserver_backend:
+  - git
+
+gitfs_remotes:
+  - git://github.com/argast/salt.git
