@@ -1,5 +1,6 @@
 Vagrant.configure("2") do |config|
 	config.vm.box = "ubuntu/trusty64"
+    config.vm.synced_folder ".", "/vagrant", disabled: true
 
 	config.vm.define "master" do |master|
 
@@ -17,10 +18,20 @@ Vagrant.configure("2") do |config|
 		end
 	end
 
+    config.vm.define "jenkins" do |minion|
+
+        minion.vm.hostname = "jenkins"
+        minion.vm.network "private_network", ip: "192.168.0.102"
+
+        minion.vm.provision :salt do |salt|
+            salt.minion_config = "config/minion"
+        end
+    end
+
 	config.vm.define "minion1" do |minion|
 
 		minion.vm.hostname = "minion1"
-		minion.vm.network "private_network", ip: "192.168.0.102"
+		minion.vm.network "private_network", ip: "192.168.0.103"
 
 		minion.vm.provision :salt do |salt|
 			salt.minion_config = "config/minion"
@@ -30,7 +41,7 @@ Vagrant.configure("2") do |config|
 	config.vm.define "minion2" do |minion|
 
 		minion.vm.hostname = "minion2"
-		minion.vm.network "private_network", ip: "192.168.0.103"
+		minion.vm.network "private_network", ip: "192.168.0.104"
 
 		minion.vm.provision :salt do |salt|
 			salt.minion_config = "config/minion"
