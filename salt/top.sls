@@ -1,6 +1,6 @@
 base:
-    'minion1': 
-        - bin.nginx    
+    'hello': 
+        - hello.hello   
     'minion2': 
         - bin.nginx
     'jenkins': 
