@@ -28,9 +28,9 @@ Vagrant.configure("2") do |config|
         end
     end
 
-	config.vm.define "minion1" do |minion|
+	config.vm.define "hello" do |minion|
 
-		minion.vm.hostname = "minion1"
+		minion.vm.hostname = "hello"
 		minion.vm.network "private_network", ip: "192.168.0.103"
 
 		minion.vm.provision :salt do |salt|
