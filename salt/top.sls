@@ -3,5 +3,5 @@ base:
         - bin.hello
     "minion2":
         - bin.nginx
-    "jenkins"
+    "jenkins":
         -jenkins
