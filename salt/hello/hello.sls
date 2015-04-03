@@ -1,18 +1,21 @@
 hello-image:
   docker.pulled:
-    - name: argast/scala-di
-    - tag: 1.0
-    - force: true
+    - name: ubuntu
+    - tag: latest
+#   docker.pulled:
+#     - name: argast/scala-di
+#     - tag: 1.0
+#     - force: true
 
-hello-container:
-  docker.installed:
-    - image: hello-image
-    - watch:
-      - docker: hello-image
+# hello-container:
+#   docker.installed:
+#     - image: hello-image
+#     - watch:
+#       - docker: hello-image
 
-hello:
-  docker.running:
-    - container: hello-container
-    - watch:
-      - docker: hello-container
+# hello:
+#   docker.running:
+#     - container: hello-container
+#     - watch:
+#       - docker: hello-container
         
