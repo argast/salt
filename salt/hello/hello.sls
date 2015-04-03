@@ -1,11 +1,11 @@
 hello-image:
   docker.pulled:
-    - name: argast/scala-di:latest
+    - name: argast/scala-di:1.0
     - force: true
 
 hello-container:
   docker.installed:
-    - image: argast/scala-di:latest
+    - image: argast/scala-di:1.0
     - watch:
       - docker: hello-image
 
