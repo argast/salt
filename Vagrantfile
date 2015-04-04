@@ -28,10 +28,20 @@ Vagrant.configure("2") do |config|
         end
     end
 
+    config.vm.define "nexus" do |minion|
+
+        minion.vm.hostname = "nexus"
+        minion.vm.network "private_network", ip: "192.168.0.103"
+
+        minion.vm.provision :salt do |salt|
+            salt.minion_config = "config/minion"
+        end
+    end
+
 	config.vm.define "hello" do |minion|
 
 		minion.vm.hostname = "hello"
-		minion.vm.network "private_network", ip: "192.168.0.103"
+		minion.vm.network "private_network", ip: "192.168.0.104"
 
 		minion.vm.provision :salt do |salt|
 			salt.minion_config = "config/minion"
@@ -41,7 +51,7 @@ Vagrant.configure("2") do |config|
 	config.vm.define "minion2" do |minion|
 
 		minion.vm.hostname = "minion2"
-		minion.vm.network "private_network", ip: "192.168.0.104"
+		minion.vm.network "private_network", ip: "192.168.0.105"
 
 		minion.vm.provision :salt do |salt|
 			salt.minion_config = "config/minion"

@@ -9,3 +9,4 @@ gitfs_remotes:
     - git://github.com/argast/salt.git:
         - root: salt
     - git://github.com/saltstack-formulas/jenkins-formula
+    - git://github.com/saltstack-formulas/nexus-formula

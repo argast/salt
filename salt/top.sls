@@ -5,3 +5,5 @@ base:
         - bin.nginx
     'jenkins': 
         - jenkins
+    'nexus': 
+        - nexus
